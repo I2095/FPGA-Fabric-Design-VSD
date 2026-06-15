@@ -332,6 +332,8 @@ Update the counter module to work with VIO:
 1. Open **IP Catalog** in Vivado.
 2. Search for **Virtual Input/Output (VIO)**.
 3. Add the VIO IP to the project.
+<img width="2448" height="918" alt="image" src="https://github.com/user-attachments/assets/c149fe68-fbac-4ce4-8d2f-f08947ac4860" />
+
 ---
 ### 3. Configure Probes
 - Add the required **input probes** and **output probes**.
@@ -339,6 +341,10 @@ Update the counter module to work with VIO:
   - Example:
     - Reset → 1 bit
     - Counter Output → 4 bits
+<img width="1190" height="494" alt="image" src="https://github.com/user-attachments/assets/27b418b3-1048-48cb-9600-c04efce6e286" />
+
+<img width="1214" height="550" alt="image" src="https://github.com/user-attachments/assets/86fae6c5-9d84-4e8e-a99f-ed68a8823ecf" />
+
 ---
 ### 4. Generate the VIO Template
 Navigate to:
