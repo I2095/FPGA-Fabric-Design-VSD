@@ -146,15 +146,16 @@ I/O Planning
 
 ---
 # Pin Mapping
-- For clock and reset:
+# For clock and reset:
 <img width="772" height="1036" alt="image" src="https://github.com/user-attachments/assets/5d931953-9cf3-46b4-88be-14f0991dc3d7" />
 
-- For LED Mapping:
+# For LED Mapping:
 <img width="1104" height="1072" alt="image" src="https://github.com/user-attachments/assets/697da91a-b243-4ec3-bab2-c3b280e64592" />
 
 ---
 # Vivado constraints settings
 <img width="2404" height="716" alt="image" src="https://github.com/user-attachments/assets/265c5820-bba6-4126-a483-e5151574f46b" />
+
 
 <img width="2166" height="864" alt="image" src="https://github.com/user-attachments/assets/7542d18c-7687-4b43-a241-be41fd52a7a4" />
 
@@ -231,25 +232,63 @@ thold
 ### Condition
 - Slack ≥ 0 → Timing met 
 - Slack < 0 → Add delay buffers or modify routing
-
-# Counter Timing Summary
-- Since no constraints have been specified, setup and hold slack are 'inf'
-<img width="2442" height="1544" alt="image" src="https://github.com/user-attachments/assets/3ced2367-027c-4408-ba8c-2b5d7d1a9992" />
-
-- To set the constraints, go to the 'Constraints Wizard' in the 'Flow Navigator'
-- Set the clk constraint.
-<img width="2376" height="1660" alt="image" src="https://github.com/user-attachments/assets/72b8f1a0-03ff-4f27-bb5f-a45b9fac6809" />
 ---
-<img width="1842" height="1648" alt="image" src="https://github.com/user-attachments/assets/47df7dfa-da81-495e-9b35-5cc852315571" />
+# Counter Timing Analysis
+This section demonstrates how timing constraints affect the timing analysis results in Vivado.
 
 ---
-- Only clock constraint has been specified
-<img width="1844" height="1642" alt="image" src="https://github.com/user-attachments/assets/c322db04-77e5-4b1b-b293-81c8bfd1c299" />
+## 1. Initial Timing Summary (No Constraints)
+Before defining any timing constraints, Vivado cannot perform meaningful setup and hold analysis.
+### Observation
+- No clock constraint has been specified.
+- Setup and hold slack values appear as **"INF" (Infinite)**.
+- Timing results are not valid until a clock is defined.
+
+<img width="2442" height="1544" alt="Initial Timing Summary" src="https://github.com/user-attachments/assets/3ced2367-027c-4408-ba8c-2b5d7d1a9992" />
+
 ---
-- Re-run synthesis and observe the timing summary
-<img width="2426" height="1530" alt="image" src="https://github.com/user-attachments/assets/3643a066-84c0-40b9-b264-ef79ad4bd122" />
+
+## 2. Open the Constraints Wizard
+To define timing constraints:
+1. Open **Flow Navigator**
+2. Select **Constraints Wizard**
+3. Create a clock constraint for the design
+
+<img width="2376" height="1660" alt="Constraints Wizard" src="https://github.com/user-attachments/assets/72b8f1a0-03ff-4f27-bb5f-a45b9fac6809" />
+
 ---
-- Run the implementation
+
+## 3. Define the Clock Constraint
+Specify the clock source and clock period.
+<img width="1842" height="1648" alt="Clock Constraint Setup" src="https://github.com/user-attachments/assets/47df7dfa-da81-495e-9b35-5cc852315571" />
+
+---
+## 4. Verify Applied Constraints
+After creating the constraint:
+- The design now contains a valid clock definition.
+- Timing analysis can calculate setup and hold requirements.
+- Currently, only the clock constraint has been specified.
+
+<img width="1844" height="1642" alt="Applied Clock Constraint" src="https://github.com/user-attachments/assets/c322db04-77e5-4b1b-b293-81c8bfd1c299" />
+
+---
+## 5. Re-run Synthesis
+Re-run synthesis to update timing analysis using the newly defined clock constraint.
+### Observation
+- Timing reports now contain valid setup and hold calculations.
+- Slack values are computed based on the specified clock period.
+- The design can now be evaluated for timing violations.
+
+<img width="2426" height="1530" alt="Updated Timing Summary" src="https://github.com/user-attachments/assets/3643a066-84c0-40b9-b264-ef79ad4bd122" />
+
+---
+## 6. Run Implementation
+After synthesis is complete:
+- Run **Implementation**.
+- Vivado performs placement and routing.
+- Timing analysis is repeated using actual routing delays.
+- Final setup and hold slack values are generated for sign-off.
+
 # Synthesized netlist
 <img width="2352" height="1344" alt="image" src="https://github.com/user-attachments/assets/ba2fac7d-a207-48f8-bfd5-74c2baf1e033" />
 
