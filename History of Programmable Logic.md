@@ -78,6 +78,7 @@ Features
 - Supports complex digital systems and System-on-Chip (SoC) designs.
 - Reconfigurable after deployment.
 - Suitable for AI acceleration, signal processing, networking, and embedded systems.
+
 FPGA Basys 3 Developement board
 <img width="796" height="492" alt="image" src="https://github.com/user-attachments/assets/02ef41c9-de86-4d14-8de8-d34a0558d531" />
 
