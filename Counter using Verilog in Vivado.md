@@ -418,4 +418,9 @@ After connecting all probes:
 
 <img width="2430" height="1642" alt="image" src="https://github.com/user-attachments/assets/285fe313-6384-49fa-a719-004ee0d0faf8" />
 
+# Synthesized netlist
+<img width="2350" height="872" alt="image" src="https://github.com/user-attachments/assets/badbea3a-1c83-4ba8-b935-6d940fbbb1cb" />
+
+# Using VIO to observe output
+<img width="1852" height="584" alt="image" src="https://github.com/user-attachments/assets/41a7d7e0-c500-4cb8-b89c-16cb33fc8e87" />
 
