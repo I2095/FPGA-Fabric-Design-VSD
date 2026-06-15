@@ -5,7 +5,7 @@
 
 <img width="2158" height="1368" alt="Screenshot 2026-06-15 205818" src="https://github.com/user-attachments/assets/9c33dfd6-bf62-434d-854e-058a8a1aaed0" />
 
-# Up-Counter Verilog Code with Clock Divider
+# 4-bit Up-Counter Verilog Code with Clock Divider
 ## Design Description
 This design implements a 4-bit up-counter with a clock divider. The clock divider slows down the input clock, allowing the counter to increment at a lower frequency that can be easily observed on hardware.
 ### Features
@@ -316,3 +316,5 @@ After synthesis is complete:
 # After implementation Area Report
 <img width="1538" height="882" alt="image" src="https://github.com/user-attachments/assets/1982769f-d2d9-497c-aee0-6b6eabe813b8" />
 
+---
+# Counter code using VIO (Virtual input/output)
