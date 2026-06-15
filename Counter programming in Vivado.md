@@ -3,37 +3,29 @@ The counter has been programmed in Vivado using Verilog HDL language. For this, 
 
 <img width="2158" height="1368" alt="Screenshot 2026-06-15 205818" src="https://github.com/user-attachments/assets/9c33dfd6-bf62-434d-854e-058a8a1aaed0" />
 
-# Up-counter verilog code with clock divider
+# Up-Counter Verilog Code with Clock Divider
+## Design Description
+This design implements a 4-bit up-counter with a clock divider. The clock divider slows down the input clock, allowing the counter to increment at a lower frequency that can be easily observed on hardware.
+### Features
+- 4-bit synchronous up-counter
+- Asynchronous reset
+- Clock divider for frequency reduction
+- Suitable for FPGA implementation and simulation
+---
+## Verilog Module
+
+```verilog
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 06/15/2026 09:24:08 PM
-// Design Name: 
-// Module Name: counterVSD
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 module counterVSD(
-    input clk, // clock signal
-    input rst, //reset signal
-    output reg [3:0] counter_out //output of the counter
+    input clk,                  // Clock signal
+    input rst,                  // Reset signal
+    output reg [3:0] counter_out // Counter output
 );
 
-reg div_clk; //clock divider signal
-reg [25:0] delay_count; //delay
+reg div_clk;                    // Divided clock
+reg [25:0] delay_count;         // Clock divider counter
 
-//Clock divider that has been used
+// Clock Divider
 always @(posedge clk)
 begin
     if (rst)
@@ -52,7 +44,7 @@ begin
             delay_count <= delay_count + 1;
     end
 end
-//counter module
+// 4-bit Up Counter
 always @(posedge div_clk or posedge rst)
 begin
     if (rst)
@@ -61,29 +53,13 @@ begin
         counter_out <= counter_out + 1;
 end
 endmodule
-
-# Testbench
+```
+---
+## Testbench
+```verilog
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 06/15/2026 09:31:17 PM
-// Design Name: 
-// Module Name: counterVSD_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 module counterVSD_tb;
+
 reg clk;
 reg rst;
 wire [3:0] counter_out;
@@ -94,10 +70,8 @@ counterVSD dut (
     .rst(rst),
     .counter_out(counter_out)
 );
-
-// generate clock signal 
-always #5 clk = ~clk;   // 100 MHz clock (10ns period)
-
+// Generate 100 MHz clock (10 ns period)
+always #5 clk = ~clk;
 initial begin
     // Initialize signals
     clk = 0;
@@ -105,22 +79,38 @@ initial begin
     // Hold reset for a few cycles
     #20;
     rst = 0;
-    // Run simulation for some time
+    // Run simulation
     #5000;
-    // Finish simulation
+    // End simulation
     $finish;
 end
-//monitor
+// Monitor outputs
 initial begin
-    $monitor("Time = %0t | rst = %b | counter_out = %b",
-              $time, rst, counter_out);
+    $monitor(
+        "Time = %0t | rst = %b | counter_out = %b",
+        $time, rst, counter_out
+    );
 end
 endmodule
-
+```
+---
+## Expected Behavior
+1. Reset initializes the counter to `0000`.
+2. The clock divider generates a slower clock (`div_clk`).
+3. The counter increments on every positive edge of `div_clk`.
+4. Counter sequence:
+```text
+0000 → 0001 → 0010 → 0011 → ...
+```
+5. After reaching `1111`, the counter wraps around to `0000`.
 # Simulation Output
 <img width="2404" height="776" alt="image" src="https://github.com/user-attachments/assets/d2b25ce8-7242-44f8-915a-154d668aada9" />
 
-# TCL Console output
+## Simulation Output (TCL Console)
+
+The simulation shows the 4-bit counter incrementing on each rising edge of the divided clock. After reaching `1111` (decimal 15), the counter wraps around to `0000` and continues counting.
+
+```text
 Time = 31487805000 | rst = 0 | counter_out = 0000
 Time = 31492065000 | rst = 0 | counter_out = 0001
 Time = 31496325000 | rst = 0 | counter_out = 0010
@@ -140,6 +130,12 @@ Time = 31551705000 | rst = 0 | counter_out = 1111
 Time = 31555965000 | rst = 0 | counter_out = 0000
 Time = 31560225000 | rst = 0 | counter_out = 0001
 Time = 31564485000 | rst = 0 | counter_out = 0010
+```
+### Observation
+- The counter starts from `0000` after reset is released.
+- It increments sequentially from `0000` to `1111`.
+- After reaching `1111`, it overflows and returns to `0000`.
+- This verifies the correct operation of the 4-bit up-counter and clock divider.
 ---
 # Elaborated Design
 Default Layout
@@ -150,10 +146,10 @@ I/O Planning
 
 ---
 # Pin Mapping
-For clock and reset:
+- For clock and reset:
 <img width="772" height="1036" alt="image" src="https://github.com/user-attachments/assets/5d931953-9cf3-46b4-88be-14f0991dc3d7" />
 
-For LED Mapping:
+- For LED Mapping:
 <img width="1104" height="1072" alt="image" src="https://github.com/user-attachments/assets/697da91a-b243-4ec3-bab2-c3b280e64592" />
 
 ---
@@ -177,7 +173,6 @@ A synchronous timing path consists of:
   - Logic delay: **tlogic**
 - **Capture Flip-Flop (FF2)**: Captures data on the next clock edge.
 ### Data Path
-
 ```text
 FF1 ──► Combinational Logic ──► FF2
 ```
