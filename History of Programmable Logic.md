@@ -19,7 +19,13 @@ CPLD (Complex Programmable Logic Device): Combines multiple SPLDs on a single ch
 FPGA (Field-Programmable Gate Array): Uses configurable logic blocks (CLBs) and programmable interconnects instead of AND/OR planes. Supports very large and complex digital system designs.
 <img width="1296" height="1090" alt="image" src="https://github.com/user-attachments/assets/26a6c9cc-8ac9-48db-ba48-e4318e2f6d72" />
 
-Disadvantages of CPLD
+| Technology | Period | Key Feature | Purpose |
+|------------|--------|-------------|---------|
+| **PLA** | Early-Mid 1970s | Programmable AND and OR arrays | Maximum logic flexibility, but slower and costlier. |
+| **PAL** | Late 1970s-Early 1980s | Programmable AND, fixed OR array | Faster and cheaper alternative to PLA. |
+| **CPLD** | Mid-Late 1980s | Multiple PAL/SPLD blocks connected by a switch matrix | Higher logic density, predictable timing, and instant startup. |
+
+# Disadvantages of CPLD
 
 Lack of Embedded Hardware: CPLDs do not contain dedicated resources such as DSP blocks, Block RAM (BRAM), PLLs, or embedded processors. As a result, arithmetic, signal-processing, and memory-intensive applications are less efficient and consume more logic resources.
 Limited Routing Flexibility: CPLDs use a centralized switch-matrix architecture, which restricts how logic blocks can be interconnected. This makes implementing highly complex or heavily parallel designs more difficult compared to FPGAs.
