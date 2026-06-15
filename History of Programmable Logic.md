@@ -44,34 +44,38 @@ Advantages
 - Cost-effective solution.
 Limitations
 - Less flexible than PLA because the OR array is fixed.
-4. Complex Programmable Logic Device
-A CPLD combines multiple PAL/SPLD blocks on a single chip connected through programmable interconnects.
-Features
-- Higher logic density than PALs and PLAs.
-- Predictable timing characteristics.
-- Non-volatile configuration memory.
-- Instant-on operation after power-up.
-CPLD Architecture
-<img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/e94f6a5b-1d24-458d-9ef3-0f1a57c573ec" />
+CPLD (Complex Programmable Logic Device)
 
-Disadvantages of CPLD
-- Lack of Embedded Hardware: CPLDs do not contain dedicated resources such as DSP blocks, Block RAM (BRAM), PLLs, or embedded processors. As a result, arithmetic, signal-processing, and memory-intensive applications are less efficient and consume more logic resources.
-- Limited Routing Flexibility: CPLDs use a centralized switch-matrix architecture, which restricts how logic blocks can be interconnected. This makes implementing highly complex or heavily parallel designs more difficult compared to FPGAs.
-- Limited Flip-Flops and Sequential Logic: CPLDs are primarily designed for combinational logic using sum-of-products structures. They provide fewer registers and flip-flops, making them less suitable for large sequential circuits, state machines, and data-storage applications.
-5. Field Programmable Gate Array
-FPGAs represent the most advanced form of programmable logic devices.
-Instead of programmable AND/OR planes, FPGAs use:
-- Configurable Logic Blocks (CLBs)
-- Programmable routing resources
-- Embedded memories (BRAM)
-- DSP blocks
-- Clock management circuits
+A CPLD combines multiple PAL/SPLD blocks on a single chip connected through programmable interconnects.
+
 Features
-- Extremely high logic capacity.
-- Supports complex digital systems and System-on-Chip (SoC) designs.
-- Reconfigurable after deployment.
-- Suitable for AI acceleration, signal processing, networking, and embedded systems.
-FPGA Basys 3 pic
+Higher logic density than PALs and PLAs.
+Predictable timing characteristics.
+Non-volatile configuration memory.
+Instant-on operation after power-up.
+CPLD Architecture
+Disadvantages
+Lack of Embedded Hardware: CPLDs do not contain dedicated resources such as DSP blocks, Block RAM (BRAM), PLLs, or embedded processors. As a result, arithmetic, signal-processing, and memory-intensive applications are less efficient and consume more logic resources.
+Limited Routing Flexibility: CPLDs use a centralized switch-matrix architecture, which restricts how logic blocks can be interconnected. This makes implementing highly complex or heavily parallel designs more difficult compared to FPGAs.
+Limited Flip-Flops and Sequential Logic: CPLDs are primarily designed for combinational logic using sum-of-products structures. They provide fewer registers and flip-flops, making them less suitable for large sequential circuits, state machines, and data-storage applications.
+
+FPGA (Field Programmable Gate Array)
+
+FPGAs represent the most advanced form of programmable logic devices.
+
+Instead of programmable AND/OR planes, FPGAs use:
+
+Configurable Logic Blocks (CLBs)
+Programmable Routing Resources
+Embedded Memories (BRAM)
+DSP Blocks
+Clock Management Circuits
+Features
+Extremely high logic capacity.
+Supports complex digital systems and System-on-Chip (SoC) designs.
+Reconfigurable after deployment.
+Suitable for AI acceleration, signal processing, networking, and embedded systems.
+FPGA Basys 3 Developement board
 <img width="796" height="492" alt="image" src="https://github.com/user-attachments/assets/02ef41c9-de86-4d14-8de8-d34a0558d531" />
 
 
