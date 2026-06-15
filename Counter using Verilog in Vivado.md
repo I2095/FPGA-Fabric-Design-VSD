@@ -318,3 +318,62 @@ After synthesis is complete:
 
 ---
 # Counter code using VIO (Virtual input/output)
+<img width="1210" height="954" alt="image" src="https://github.com/user-attachments/assets/97a4c8bd-38aa-4ebb-8ecc-d380e4ed7afb" />
+
+# Implementing Virtual I/O (VIO) in Vivado
+## Steps
+### 1. Modify the Counter Design
+Update the counter module to work with VIO:
+- Internal signals controlled by VIO should be declared as **wires**.
+- Outputs driven by sequential logic should remain **reg**.
+- The FPGA clock input remains unchanged.
+---
+### 2. Create a VIO IP Core
+1. Open **IP Catalog** in Vivado.
+2. Search for **Virtual Input/Output (VIO)**.
+3. Add the VIO IP to the project.
+---
+### 3. Configure Probes
+- Add the required **input probes** and **output probes**.
+- Set the probe widths according to the signal sizes in your design.
+  - Example:
+    - Reset → 1 bit
+    - Counter Output → 4 bits
+---
+### 4. Generate the VIO Template
+Navigate to:
+```text
+IP Sources
+ └── VIO
+      └── Instantiation Template
+```
+Select:
+- **.veo** for Verilog
+---
+### 5. Instantiate the VIO Module
+- Copy the generated template.
+- Paste it into your top-level design file.
+- Connect the VIO ports to your design signals.
+---
+### 6. Rename Probe Signals
+Modify the probe names to match your design.
+Example:
+- `probe_in0` → `counter_out`
+- `probe_out0` → `rst`
+Follow the comments in the generated template to determine:
+- Which probes are inputs to the VIO
+- Which probes are outputs from the VIO
+---
+### 7. Connect Signals
+Assign the VIO probes to the appropriate design signals.
+- **VIO Outputs** → Drive design inputs
+- **VIO Inputs** → Monitor design outputs
+This allows real-time control and observation through Vivado Hardware Manager.
+---
+### 8. Run the Design
+After connecting all probes:
+1. Run **Synthesis**
+2. Run **Implementation**
+3. Generate the **Bitstream**
+4. Program the FPGA
+5. Open **Hardware Manager** to interact with the VIO
