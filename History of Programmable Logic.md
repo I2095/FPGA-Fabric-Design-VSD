@@ -53,6 +53,7 @@ Features
 - Instant-on operation after power-up.
 CPLD Architecture
 <img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/e94f6a5b-1d24-458d-9ef3-0f1a57c573ec" />
+
 Disadvantages of CPLD
 - Lack of Embedded Hardware: CPLDs do not contain dedicated resources such as DSP blocks, Block RAM (BRAM), PLLs, or embedded processors. As a result, arithmetic, signal-processing, and memory-intensive applications are less efficient and consume more logic resources.
 - Limited Routing Flexibility: CPLDs use a centralized switch-matrix architecture, which restricts how logic blocks can be interconnected. This makes implementing highly complex or heavily parallel designs more difficult compared to FPGAs.
