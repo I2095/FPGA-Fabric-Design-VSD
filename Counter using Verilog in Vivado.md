@@ -360,26 +360,62 @@ Select:
 - Copy the generated template.
 - Paste it into your top-level design file.
 - Connect the VIO ports to your design signals.
----
-### 6. Rename Probe Signals
-Modify the probe names to match your design.
-Example:
-- `probe_in0` → `counter_out`
-- `probe_out0` → `rst`
-Follow the comments in the generated template to determine:
-- Which probes are inputs to the VIO
-- Which probes are outputs from the VIO
----
-### 7. Connect Signals
-Assign the VIO probes to the appropriate design signals.
-- **VIO Outputs** → Drive design inputs
-- **VIO Inputs** → Monitor design outputs
-This allows real-time control and observation through Vivado Hardware Manager.
----
-### 8. Run the Design
+## - Updated verilog code for VIO Counter design
+```verilog
+module counterVSD(
+    input clk
+);
+wire rst;                 // Reset signal from VIO
+reg [3:0] counter_out;    // Counter output
+reg div_clk;              // Divided clock
+reg [25:0] delay_count;   // Clock divider counter
+// Virtual Input/Output (VIO)
+vio_0 your_instance_name (
+    .clk(clk),              // Clock input
+    .probe_in0(div_clk),    // Monitor divided clock
+    .probe_in1(counter_out),// Monitor counter output
+    .probe_out0(rst)        // Control reset from VIO
+);
+// Clock Divider
+always @(posedge clk)
+begin
+    if (rst)
+    begin
+        delay_count <= 26'd0;
+        div_clk <= 1'b0;
+    end
+    else
+    begin
+        if (delay_count == 26'd212)
+        begin
+            delay_count <= 26'd0;
+            div_clk <= ~div_clk;
+        end
+        else
+            delay_count <= delay_count + 1;
+    end
+end
+// 4-Bit Up Counter
+always @(posedge div_clk or posedge rst)
+begin
+    if (rst)
+        counter_out <= 4'b0000;
+    else
+        counter_out <= counter_out + 1;
+end
+endmodule
+```
+### 6. Run the Design
 After connecting all probes:
 1. Run **Synthesis**
 2. Run **Implementation**
 3. Generate the **Bitstream**
 4. Program the FPGA
 5. Open **Hardware Manager** to interact with the VIO
+
+# Elaborated Design
+<img width="1524" height="540" alt="image" src="https://github.com/user-attachments/assets/0669baac-a972-470c-b804-741862d9a112" />
+
+<img width="2430" height="1642" alt="image" src="https://github.com/user-attachments/assets/285fe313-6384-49fa-a719-004ee0d0faf8" />
+
+
