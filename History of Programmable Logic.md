@@ -17,6 +17,9 @@ Features
 - Functions as a Lookup Table (LUT).
 - Stores predefined output values for all possible input combinations.
 - Suitable for implementing simple combinational logic functions.
+PROM Architecture
+<img width="690" height="470" alt="image" src="https://github.com/user-attachments/assets/5d8fd467-7579-4183-9c36-e477e15e303c" />
+
 2. PLA (Programmable Logic Array)
 PLA provides both programmable AND and programmable OR arrays, offering maximum flexibility in logic implementation.
 Features
@@ -44,6 +47,8 @@ Advantages
 - Cost-effective solution.
 Limitations
 - Less flexible than PLA because the OR array is fixed.
+PAL Architecture
+<img width="1174" height="420" alt="image" src="https://github.com/user-attachments/assets/de18a7cc-2a2e-47ac-9136-74672a04b487" />
 
 4. CPLD (Complex Programmable Logic Device)
 A CPLD combines multiple PAL/SPLD blocks on a single chip connected through programmable interconnects.
