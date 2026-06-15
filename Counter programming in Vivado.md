@@ -253,13 +253,12 @@ To define timing constraints:
 1. Open **Flow Navigator**
 2. Select **Constraints Wizard**
 3. Create a clock constraint for the design
+4. Define the Clock Constraint
 
 <img width="2376" height="1660" alt="Constraints Wizard" src="https://github.com/user-attachments/assets/72b8f1a0-03ff-4f27-bb5f-a45b9fac6809" />
 
 ---
 
-## 3. Define the Clock Constraint
-Specify the clock source and clock period.
 <img width="1842" height="1648" alt="Clock Constraint Setup" src="https://github.com/user-attachments/assets/47df7dfa-da81-495e-9b35-5cc852315571" />
 
 ---
