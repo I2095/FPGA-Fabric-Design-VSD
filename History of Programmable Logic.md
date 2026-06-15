@@ -1,6 +1,7 @@
 # History of programmable logic devices
-1. PLD - programmable logic devices that have been used since ancient times, unlike standard chips that have fixed functionality, pld can be re-programmed allowing for ease of re-programbility.
-2. Programmable Logic Devices (PLDs) are integrated circuits used in VLSI design that can be configured by the user to perform custom digital logic operations. Unlike fixed-function chips, PLDs consist of universal arrays of logic gates (AND/OR arrays) connected via programmable switches,
+Programmable Logic Devices (PLDs) are integrated circuits that can be configured by the user to implement custom digital logic functions. Unlike fixed-function ICs, PLDs can be programmed and reprogrammed to perform different logic operations, making them highly flexible and adaptable.
+
+PLDs are built using programmable logic structures, typically consisting of configurable AND/OR arrays connected through programmable switches. Their introduction significantly simplified digital system design and paved the way for modern reconfigurable computing technologies such as FPGAs.
 # Why PLDs were needed
 Need for PLDs
 - Reduced the number of SSI/MSI logic chips on a PCB.
@@ -8,33 +9,79 @@ Need for PLDs
 - Allowed design modifications without hardware redesign.
 - Reduced development time and manufacturing cost.
 
-# Categories of PLDs
-
-PROM (Programmable Read-Only Memory): Has a fixed AND array and a programmable OR array. Used as a lookup table (LUT) to store output values for input combinations.
-PLA (Programmable Logic Array): Has both programmable AND and OR arrays. Offers maximum flexibility but is slower due to higher propagation delay.
-# Image of PLA
+# Evolution and  Categories of PLDs
+Over time, programmable logic technology evolved through several generations, each offering greater flexibility, capacity, and performance.
+1. PROM (Programmable Read-Only Memory)
+PROM consists of a fixed AND array and a programmable OR array.
+Features
+- Functions as a Lookup Table (LUT).
+- Stores predefined output values for all possible input combinations.
+- Suitable for implementing simple combinational logic functions.
+2. PLA (Programmable Logic Array)
+PLA provides both programmable AND and programmable OR arrays, offering maximum flexibility in logic implementation.
+Features
+- Supports custom generation of product terms.
+- Can implement complex combinational logic efficiently.
+- Highly flexible but introduces larger propagation delays.
+Advantages
+- Maximum design flexibility.
+- Efficient realization of multiple logic functions.
+Disadvantages
+- Higher cost.
+- Slower operation due to programmable connections in both arrays.
+ PLA Architecture
 <img width="766" height="696" alt="image" src="https://github.com/user-attachments/assets/5d34628a-9c72-4716-b448-cb4634b4d1a0" />
 
-PAL (Programmable Array Logic): Has a programmable AND array and a fixed OR array. Faster and cheaper than PLA, with slightly reduced flexibility.
-CPLD (Complex Programmable Logic Device): Combines multiple SPLDs on a single chip using programmable interconnects. Suitable for high-speed applications with predictable timing.
-
-# Image of cpld
+3. PAL (Programmable Array Logic)
+PAL uses a programmable AND array and a fixed OR array.
+Features
+- Faster than PLA due to reduced programmability.
+- Lower manufacturing cost.
+- Widely adopted for medium-complexity logic designs.
+Advantages
+- Higher speed.
+- Simpler architecture.
+- Cost-effective solution.
+Limitations
+- Less flexible than PLA because the OR array is fixed.
+4. Complex Programmable Logic Device
+A CPLD combines multiple PAL/SPLD blocks on a single chip connected through programmable interconnects.
+Features
+- Higher logic density than PALs and PLAs.
+- Predictable timing characteristics.
+- Non-volatile configuration memory.
+- Instant-on operation after power-up.
+CPLD Architecture
 <img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/e94f6a5b-1d24-458d-9ef3-0f1a57c573ec" />
+Disadvantages of CPLD
+Lack of Embedded Hardware: CPLDs do not contain dedicated resources such as DSP blocks, Block RAM (BRAM), PLLs, or embedded processors. As a result, arithmetic, signal-processing, and memory-intensive applications are less efficient and consume more logic resources.
+Limited Routing Flexibility: CPLDs use a centralized switch-matrix architecture, which restricts how logic blocks can be interconnected. This makes implementing highly complex or heavily parallel designs more difficult compared to FPGAs.
+Limited Flip-Flops and Sequential Logic: CPLDs are primarily designed for combinational logic using sum-of-products structures. They provide fewer registers and flip-flops, making them less suitable for large sequential circuits, state machines, and data-storage applications.
+5. Field Programmable Gate Array
+FPGAs represent the most advanced form of programmable logic devices.
+Instead of programmable AND/OR planes, FPGAs use:
+- Configurable Logic Blocks (CLBs)
+- Programmable routing resources
+- Embedded memories (BRAM)
+- DSP blocks
+- Clock management circuits
+Features
+Extremely high logic capacity.
+Supports complex digital systems and System-on-Chip (SoC) designs.
+Reconfigurable after deployment.
+Suitable for AI acceleration, signal processing, networking, and embedded systems.
+FPGA Basys 3 pic
+<img width="796" height="492" alt="image" src="https://github.com/user-attachments/assets/02ef41c9-de86-4d14-8de8-d34a0558d531" />
 
-FPGA (Field-Programmable Gate Array): Uses configurable logic blocks (CLBs) and programmable interconnects instead of AND/OR planes. Supports very large and complex digital system designs.
 
 # Diagram for each programmable logic device
 <img width="1296" height="1090" alt="image" src="https://github.com/user-attachments/assets/26a6c9cc-8ac9-48db-ba48-e4318e2f6d72" />
 
+# Comparison of PLD Technologies
 | Technology | Period | Key Feature | Purpose |
 |------------|--------|-------------|---------|
 | **PLA** | Early-Mid 1970s | Programmable AND and OR arrays | Maximum logic flexibility, but slower and costlier. |
 | **PAL** | Late 1970s-Early 1980s | Programmable AND, fixed OR array | Faster and cheaper alternative to PLA. |
 | **CPLD** | Mid-Late 1980s | Multiple PAL/SPLD blocks connected by a switch matrix | Higher logic density, predictable timing, and instant startup. |
 
-# Disadvantages of CPLD
-
-Lack of Embedded Hardware: CPLDs do not contain dedicated resources such as DSP blocks, Block RAM (BRAM), PLLs, or embedded processors. As a result, arithmetic, signal-processing, and memory-intensive applications are less efficient and consume more logic resources.
-Limited Routing Flexibility: CPLDs use a centralized switch-matrix architecture, which restricts how logic blocks can be interconnected. This makes implementing highly complex or heavily parallel designs more difficult compared to FPGAs.
-Limited Flip-Flops and Sequential Logic: CPLDs are primarily designed for combinational logic using sum-of-products structures. They provide fewer registers and flip-flops, making them less suitable for large sequential circuits, state machines, and data-storage applications.
 
