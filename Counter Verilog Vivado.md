@@ -140,10 +140,10 @@ Time = 31564485000 | rst = 0 | counter_out = 0010
 - This verifies the correct operation of the 4-bit up-counter and clock divider.
 ---
 # Elaborated Design
-Default Layout
+**Default Layout**
 <img width="1524" height="616" alt="image" src="https://github.com/user-attachments/assets/7db63141-973c-47d7-bea6-d07449104250" />
 
-I/O Planning
+**I/O Planning**
 <img width="942" height="738" alt="image" src="https://github.com/user-attachments/assets/7af690c3-bf6c-47a1-92ba-d8e88bc4f329" />
 
 ---
