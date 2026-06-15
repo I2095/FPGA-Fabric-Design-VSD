@@ -8,15 +8,22 @@ Need for PLDs
 - Allowed design modifications without hardware redesign.
 - Reduced development time and manufacturing cost.
 
-3. Categories of PLDs
+# Categories of PLDs
 
 PROM (Programmable Read-Only Memory): Has a fixed AND array and a programmable OR array. Used as a lookup table (LUT) to store output values for input combinations.
 PLA (Programmable Logic Array): Has both programmable AND and OR arrays. Offers maximum flexibility but is slower due to higher propagation delay.
+# Image of PLA
 <img width="766" height="696" alt="image" src="https://github.com/user-attachments/assets/5d34628a-9c72-4716-b448-cb4634b4d1a0" />
 
 PAL (Programmable Array Logic): Has a programmable AND array and a fixed OR array. Faster and cheaper than PLA, with slightly reduced flexibility.
 CPLD (Complex Programmable Logic Device): Combines multiple SPLDs on a single chip using programmable interconnects. Suitable for high-speed applications with predictable timing.
+
+# Image of cpld
+<img width="900" height="798" alt="image" src="https://github.com/user-attachments/assets/e94f6a5b-1d24-458d-9ef3-0f1a57c573ec" />
+
 FPGA (Field-Programmable Gate Array): Uses configurable logic blocks (CLBs) and programmable interconnects instead of AND/OR planes. Supports very large and complex digital system designs.
+
+# Diagram for each programmable logic device
 <img width="1296" height="1090" alt="image" src="https://github.com/user-attachments/assets/26a6c9cc-8ac9-48db-ba48-e4318e2f6d72" />
 
 | Technology | Period | Key Feature | Purpose |
