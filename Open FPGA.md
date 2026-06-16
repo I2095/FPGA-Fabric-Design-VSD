@@ -102,3 +102,57 @@ Traditional FPGA development is expensive and time-consuming, making rapid custo
 - Freely available for research and development.
 - Encourages FPGA architecture innovation and experimentation.
 ---
+# Inside FPGA Architecture
+<img width="1476" height="1098" alt="image" src="https://github.com/user-attachments/assets/58944eaf-292f-46e9-8208-21d69a041b55" />
+
+## 1. Programmable Fabric
+The programmable fabric is the main part of an FPGA and consists of:
+- **I/O Banks** – Interface with external signals.
+- **Logic Tiles** – Implement combinational and sequential logic.
+- **Block RAM (BRAM)** – On-chip memory for data storage and buffering.
+- **DSP Blocks** – Dedicated arithmetic units for multiplication, filtering, and signal processing.
+---
+## 2. Configuration Circuitry
+Configuration circuitry programs the FPGA during startup.
+- Loads the configuration bitstream.
+- Configures logic blocks, routing resources, and I/O behavior.
+- Often uses a scan-chain-based programming mechanism.
+---
+## 3. Configurable Logic Block (CLB)
+The CLB is the primary computational unit of an FPGA.
+- Contains multiple Logic Elements (LEs).
+- Performs combinational and sequential logic operations.
+- Connected through local routing resources.
+---
+## 4. Logic Element (LE)
+A Logic Element is the basic building block of a CLB.
+Typical components include:
+- Lookup Tables (LUTs)
+- Flip-Flops (FFs)
+- Multiplexers (MUXes)
+- Adder circuitry
+- Carry-chain connections for arithmetic operations
+---
+## 5. Connection Block
+Connection Blocks link logic resources to the routing network.
+- Connect CLB inputs and outputs to routing channels.
+- Enable programmable signal paths.
+---
+## 6. Switch Block
+Switch Blocks provide routing flexibility within the FPGA.
+- Connect horizontal and vertical routing tracks.
+- Allow signals to travel across the FPGA fabric.
+- Enable communication between logic resources.
+---
+## 7. Tile Architecture
+A tile is the basic repeating unit of the FPGA fabric.
+Each tile typically contains:
+- A Configurable Logic Block (CLB)
+- Connection Blocks
+- A Switch Block
+---
+# VTR Documentation
+<img width="1248" height="870" alt="image" src="https://github.com/user-attachments/assets/55fa8deb-37ba-490a-a806-d2871160a2a9" />
+
+---
+# VTR Flow
