@@ -27,7 +27,6 @@ Throughout this workshop, I learned:
 - Resource utilization analysis
 - Post-synthesis netlist generation
 - FPGA-based implementation of digital designs
-- Processor deployment on FPGA fabrics
 
 ---
 
@@ -44,7 +43,6 @@ Studied the internal structure of FPGA fabrics, including:
 - Switch boxes
 - Connection boxes
 
----
 
 ## OpenFPGA Framework
 
@@ -56,7 +54,6 @@ Explored the OpenFPGA ecosystem and learned:
 - Bitstream generation concepts
 - Open-source FPGA implementation methodology
 
----
 
 ## SOFA FPGA Architecture
 
@@ -66,8 +63,6 @@ Worked with the SOFA (SkyWater Open-Source FPGA Architecture) platform and studi
 - Tile-based FPGA fabrics
 - SkyWater 130nm integration
 - Open-source FPGA IP development
-
----
 
 ## Counter Implementation
 
@@ -82,7 +77,6 @@ Activities included:
 - Timing analysis
 - Post-synthesis verification
 
----
 
 ## RISC-V Processor Implementation
 
@@ -115,8 +109,6 @@ This experiment demonstrated how processor-class designs can be successfully dep
 ---
 ## Workshop Documentation
 
-## Workshop Documentation
-
 - [Day 1(A): History of PLDs](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/0.%20History%20of%20Programmable%20Logic%20Devices.md)
 - [Day 1(B): FPGA and its Architecture](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA%20and%20its%20Architecture.md)
 - [Day 1(C): Counter design in Vivado](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.2%20Counter%20using%20Verilog%20in%20Vivado.md)
@@ -136,9 +128,7 @@ Through this workshop, I developed practical skills in:
 - FPGA Implementation Flows
 - Logic Synthesis
 - Placement and Routing
-- Static Timing Analysis
 - Post-Synthesis Verification
-- Open-Source EDA Tools
 - RISC-V Based Design
 - Hardware Architecture Exploration
 
@@ -168,7 +158,7 @@ Using FPGA fabrics as a platform for rapid hardware validation before silicon fa
 
 ### Open-Source Silicon Movement
 
-Exploring SkyWater 130nm, OpenFPGA, and SOFA provides hands-on experience with the growing open-source semiconductor ecosystem.
+Exploring OpenFPGA and SOFA provides hands-on experience with the growing open-source semiconductor ecosystem.
 
 ---
 
@@ -193,7 +183,6 @@ The knowledge gained from FPGA architecture, OpenFPGA, SOFA, and RISC-V implemen
 
 - Understood FPGA fabric architecture and design principles.
 - Explored OpenFPGA and SOFA open-source ecosystems.
-- Implemented digital designs on FPGA fabrics.
 - Performed synthesis, placement, routing, and timing analysis.
 - Verified post-synthesis functionality.
 - Implemented a RISC-V processor on a custom FPGA architecture.
