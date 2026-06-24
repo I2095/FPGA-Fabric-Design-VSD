@@ -50,7 +50,6 @@ Explored the OpenFPGA ecosystem and learned:
 
 - FPGA architecture generation
 - Architecture description files
-- FPGA CAD flow integration
 - Bitstream generation concepts
 - Open-source FPGA implementation methodology
 
@@ -61,8 +60,7 @@ Worked with the SOFA (SkyWater Open-Source FPGA Architecture) platform and studi
 
 - FPGA1212_QLSOFA_HD_PNR architecture
 - Tile-based FPGA fabrics
-- SkyWater 130nm integration
-- Open-source FPGA IP development
+
 
 ## Counter Implementation
 
