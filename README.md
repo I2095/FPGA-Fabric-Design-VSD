@@ -8,6 +8,8 @@ The workshop provided a comprehensive introduction to FPGA architecture, FPGA im
 
 The course combines FPGA architecture concepts with real implementation flows using industry-relevant open-source tools, enabling a deeper understanding of how programmable logic devices are designed, configured, and verified.
 
+Course link: https://www.vlsisystemdesign.com/fpga/
+
 ---
 
 # Learning Objectives
