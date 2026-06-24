@@ -113,14 +113,15 @@ This experiment demonstrated how processor-class designs can be successfully dep
 ---
 ## Workshop Documentation
 
-- [Day 1: History of PLDs]([https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/0.%20History%20of%20Programmable%20Logic%20Devices.md))
-- [Day 1: FPGA and its Architecture]([https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA%20and%20its%20Architecture.md))
-- [Day 1: Counter design in Vivado]([[https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA%20and%20its%20Architecture.md)])
-- [Day 2: OpenFPGA Framework]([https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/2.%20Open%20FPGA.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/2.%20Open%20FPGA.md
-))
-- [Day 3: RISC-V on Vivado]([https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/3.%20FPGA%20Architecture.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/3.%20RISC%20V%20on%20Vivado.md))
-- [Day 4: SOFA FPGA]([https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/4.%20SOFA.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/4.%20SOFA.md))
-- [Day 5: RISC-V on SOFA FPGA]([https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/5.%20RISC%20V%20on%20SOFA.md](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/5.%20RISC%20V%20on%20SOFA.md))
+## Workshop Documentation
+
+- [Day 1(A): History of PLDs](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/0.%20History%20of%20Programmable%20Logic%20Devices.md)
+- [Day 1(B): FPGA and its Architecture](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.%20FPGA%20and%20its%20Architecture.md)
+- [Day 1(C): Counter design in Vivado](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/1.2%20Counter%20using%20Verilog%20in%20Vivado.md)
+- [Day 2: OpenFPGA Framework](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/2.%20Open%20FPGA.md)
+- [Day 3: RISC-V on Vivado](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/3.%20RISC%20V%20on%20Vivado.md)
+- [Day 4: SOFA FPGA](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/4.%20SOFA.md)
+- [Day 5: RISC-V on SOFA FPGA](https://github.com/I2095/FPGA-Fabric-Design-VSD/blob/main/5.%20RISC%20V%20on%20SOFA.md)
 
 ---
 
